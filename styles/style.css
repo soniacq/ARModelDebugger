@@ -1,0 +1,320 @@
+    html,
+body,
+.container{
+    height: 100vh;
+    margin: 0;
+    overflow-y:none;
+
+}
+
+body{
+    padding: 0;
+    overflow-y:none;
+    font-family: Open Sans, Arial, sans-serif;
+}
+  
+.container {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    overflow-y:none;
+}
+  
+#overview-panel{
+    display: grid;
+    grid-template-columns: 3.5fr 8.5fr;
+    overflow-y: hidden;
+    padding: 0.5%;
+    overflow-x: hidden;
+}
+
+
+#details-panel{
+    display: grid;
+    grid-template-columns:9fr 3fr;
+    overflow-y:hidden;
+    padding: 0.5%;
+}
+
+
+#scatterplot-container {
+    margin-right: 0.75%;
+}
+
+   
+#fnirs-agg-time-container{
+    margin-left: 0.75%;
+    overflow-y: scroll;
+    overflow-x: clip;
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+#tlmatrix-container{
+    margin-right: 0.75%;
+    display: grid;
+    grid-template-columns: 37.5% 37.5% 25%;
+    padding: none;
+    overflow-y:scroll;
+
+}
+
+#vid-imu-container{
+    overflow-y:scroll;
+
+    margin-left: 0.75%;
+}
+
+.cell{
+    border: 1px solid #504a4a;
+    border-radius: 8px;
+    padding: 0%;
+}
+
+#scatterplot-container, #video-container, #event-timeline-container, #prediction-sessions-container {
+    padding: 0;
+
+    position: relative; /* Ensure relative positioning */
+}
+
+#hl2-container{
+    position: relative;
+    margin: 0%;
+}
+
+#steppred-header{
+
+    visibility: hidden;
+    margin: 0;    
+    position: absolute;
+    top: 1px;
+    text-align: center;
+    left:50%;
+}
+
+#steppred-header > div {
+   position: relative;
+   left:-50%;
+}
+
+
+#confidence-header {
+    visibility: hidden;
+    margin: 0;    
+    position: absolute;
+    top: 190px;
+    text-align: center;
+    left:50%;
+
+}
+
+#confidence-header > div {
+    position: relative;
+    left:-50%;
+}
+
+#confidence-header > div > select{
+    max-width:70%
+}
+#steppred-header > div > select{
+    max-width:60%
+} 
+
+#error-title-header {
+    visibility: hidden;
+    margin: 0;    
+    position: absolute;
+    top: 380px;
+    text-align: center;
+    left:50%;
+
+}
+
+#error-title-header > div {
+    position: relative;
+    left:-50%;
+ }
+
+#video-container{
+    height: 190px;
+    border: none;
+    margin: 0%;
+}
+#video-player {
+    display: block;
+    margin: 2% auto;
+    max-height: 200px; 
+    max-width: 300px;
+    z-index: -100;
+    overflow:hidden;
+}
+
+#video-player video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#source-label{
+    font-size: 0.8em;
+    position: absolute; /* Position dropdown absolutely */
+    left:2%;
+    top:5px;
+}
+
+#source-dropdown {
+    position: absolute; /* Position dropdown absolutely */
+    top: 4px; /* Adjust top position as needed */
+    left: 15%; /* Adjust right position as needed */
+    z-index: 1; /* Ensure dropdown is above other elements */
+}
+
+
+#groupby-label {
+    font-size: 0.8em;
+    position: absolute; /* Position dropdown absolutely */
+    left:34%;
+    top:5px;
+}
+
+#groupby-dropdown{
+    position: absolute; /* Position dropdown absolutely */
+    top: 4px; /* Adjust top position as needed */
+    left: 48%; /* Adjust left position as needed */
+    z-index: 1; /* Ensure dropdown is above other elements */
+}
+
+#filter-label{
+    font-size: 0.8em;
+    position: absolute; /* Position dropdown absolutely */
+    left:73%;   
+    top:5px;
+}
+
+#filter-dropdown{
+    position: absolute; /* Position dropdown absolutely */
+    top: 4px; /* Adjust top position as needed */
+    right: 2%; /* Adjust left position as needed */
+    z-index: 1;
+}
+
+
+#fnirs-label{
+    font-size: 0.8em;
+    position: absolute; /* Position dropdown absolutely */
+    left:0%;
+    top:25px;
+}
+
+#model-dropdown{
+    width: 34%;
+    position: absolute; /* Position dropdown absolutely */
+    top: 35px; /* Adjust top position as needed */
+    right: 8%; /* Adjust left position as needed */
+    z-index: 1;
+}
+
+#corr-checkbox-div{
+    position: absolute;
+    margin: 0%;
+    left: 0px;
+    font-size: 12px;
+    top: 30px;
+}
+
+.lasso path {
+    stroke: black;
+    stroke-width:2px;
+    stroke-opacity: 0.5;
+}
+
+.lasso .drawn {
+    fill:  #737373;
+    fill-opacity:.15 ;
+}
+
+
+.lasso .loop_close {
+   
+    stroke-dasharray: 4,4;
+}
+
+.lasso .origin {
+
+    fill-opacity:0;
+}
+
+.unselectedscatter {
+    opacity: 0.1;
+}
+
+.timelinebrush .selection{
+        fill: black;
+        fill-opacity: 0.6;
+        stroke-width: 5px;
+  }
+
+.errorbrush .selection{
+    fill: black;
+    fill-opacity: 0.4;
+    stroke-width: 4px;
+}
+
+#fnirs-agg-container, #time-distribution-container{
+    position: relative;
+    padding: none;
+}
+ 
+
+.axisHide path {
+    display: none;
+}
+
+.axisHide line {
+    display: none;
+}
+
+.axisHide{
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.frame-rectangle{
+
+    fill: black;
+    fill-opacity: 0.5;
+    stroke-width: 6px;
+    stroke:black;
+
+}
+
+.hide-workload{
+    opacity: 0.1;
+}
+
+.hide-bar{
+    opacity: 0.1;
+}
+.container-title{
+    margin: none;
+    margin-top: 10px;
+    text-align: center;
+    z-index: 100;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#time-title 
+{
+    margin: none;
+    position: absolute;
+    left: 20%;
+    top:0%;
+    padding: 4px;
+    border-left: 1px solid black;
+    border-right:  1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 8px;
+    z-index: 100;
+    font-size: 14px;
+    font-weight: bold;
+}

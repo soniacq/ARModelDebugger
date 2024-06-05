@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Model Debugger</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="#">
+  </head>
+  <body>
+
+  <!-- <div class="container">
+
+    <div id="overview-panel">
+      
+      <div id = "scatterplot-container" class="cell">
+        
+        <label id = "source-label" for="source-dropdown">Source:</label>
+        <select id="source-dropdown"></select>
+        
+        <label id="groupby-label" for="groupby-dropdown">Groupby:</label>
+        <select id="groupby-dropdown">
+          <option selected value="subject">subject</option>
+            <option value="trial">trial</option>
+        </select>
+
+        <label id = "filter-label" for="filter-dropdown">Trials:</label>
+        <select id="filter-dropdown">
+          <option value="t5">Top 5</option>
+          <option selected value="t10">Top 10</option>
+          <option value="all">All</option>
+        </select>
+
+      </div>
+
+
+    </div> -->
+
+    <div id="details-panel">
+      <div id="tlmatrix-container" class="cell">
+        
+        <div id= "event-timeline-container" style="text-align: center;">
+          <strong>Timeline</strong>
+        </div>
+        
+        <div id="matrix-container" style="text-align: center;">
+           <strong>Embbeding space</strong> 
+        </div>
+
+        <div id ="prediction-sessions-container">
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; text-align: center;">
+            <!-- <div><strong>Error %</strong></div>
+            <div><strong>Workload %</strong> </div> -->
+
+          </div> 
+          
+          <!-- <div id="corr-checkbox-div">
+            <input type="checkbox" id="corr-checkbox" name="corr-checkbox" value="corr">
+            <label id="corr-checkbox-label" for="corr-checkbox">Error contributions</label><br>
+          </div>
+          <select id="model-dropdown" style="visibility: hidden">
+          </select> -->
+
+        </div>
+      
+      </div>
+      
+      <div id ="vid-imu-container" class="cell">      
+        <div id = "video-container" class="cell">  
+          <video id="video-player" controls muted="muted"></video>
+        </div>
+
+        <div id="hl2-container">
+
+          <div id="steppred-header">
+            <div>          
+                <strong>GT and Predicted Steps &nbsp;</strong>
+            </div>
+          </div>
+
+          <div id="confidence-header">
+            <div>
+            <strong>Confidence &nbsp;</strong>
+            </div>        
+          </div>
+
+        <div id="error-title-header">
+          <div>          
+             <strong>Error</strong> 
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+
+<script src="dist/app.bundle.js"></script>
+</body>
+</html>
