@@ -4,6 +4,7 @@ import { updateHl2Details } from './Hl2Details.js'
 import { get_eventTimelineGroup, get_eventTimelineSvg, get_matrixGroup } from './containersSVG.js';
 import { playVideoWithStartTime } from './videoPlayerUtils.js';
 import { get_brushedSubject, get_brushedTrial, get_vidEnd, get_vidStart, set_brushedSubject, set_brushedTrial, set_brushesAdded, set_vidEnd, set_vidStart } from './configHl2Details.js';
+import { updateMatrix } from './MatrixView.js';
 
 export function get_xEventTimelineScale(){
     let maxTimestamp = get_maxTimestamp();
@@ -39,9 +40,7 @@ export function updateEventTimeline( dataFiles ){
     console.log(selectedItems);
 
     // get selected value from dropdown menus
-    // let selectedGroupby = get_selectedGroupby();
-    // set_selectedGroupby('subject');
-    let selectedGroupby = 'subject';
+    let selectedGroupby = get_selectedGroupby();
 
     // get svgs
     let eventTimelineGroup = get_eventTimelineGroup();
@@ -329,6 +328,7 @@ export function updateEventTimeline( dataFiles ){
                     set_brushedSubject(null);
                     d3.selectAll(".hide-bar")
                         .classed("hide-bar",false);
+                        updateMatrix( dataFiles );
                         updateHl2Details( dataFiles);
                     return
                 }
@@ -384,6 +384,7 @@ export function updateEventTimeline( dataFiles ){
                     .style("fill-opacity",0.1)
                 matrixGroup.selectAll(".highlight-arcs")
                     .style("fill-opacity",1)
+                updateMatrix( dataFiles );
                 updateHl2Details( dataFiles);
 
             }

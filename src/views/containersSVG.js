@@ -19,6 +19,18 @@ export function initialise_svgs(){
 
     let margins = get_margins();
 
+    //scatterplot
+    let scatterplotDiv = d3.select("#scatterplot-container") 
+    scatterSvg = scatterplotDiv
+        .append("svg")
+        .attr("width", scatterplotDiv.node().clientWidth)
+        .attr("height", scatterplotDiv.node().clientHeight)
+
+    scatterGroup= scatterSvg.append("g")
+        .attr("transform", `translate(${margins.scatterplot.left}, ${margins.scatterplot.top})`)
+        .attr("width", scatterplotDiv.node().clientWidth -margins.scatterplot.left - margins.scatterplot.right )
+        .attr("height", scatterplotDiv.node().clientHeight - margins.scatterplot.top - margins.scatterplot.bottom);
+
     //eventtimeline
     let eventTimelineDiv= d3.select("#event-timeline-container")  
     eventTimelineSvg = eventTimelineDiv
