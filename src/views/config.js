@@ -18,21 +18,22 @@ export function get_allTimestamps(){
 }
 export function get_maxTimestamp(){
     return maxTimestamp;
+    // return 83;
 }
 
-
-
-export function get_stepColorScale(){
+let stepColorScale;
+export function set_stepColorScale(){
     const allSteps = ["a", "b", "c", "d", "e", "f", "?", "*", "1", "2", "v"]
 
     let modifiedSchemePaired = d3.schemePaired
     modifiedSchemePaired.splice(4,2);
     modifiedSchemePaired.push("white")
 
-    const stepColorScale = d3.scaleOrdinal()
+    stepColorScale = d3.scaleOrdinal()
         .domain(allSteps)
         .range(modifiedSchemePaired);
-
+}
+export function get_stepColorScale(){
     return stepColorScale;
 }
 
